@@ -2,3 +2,5 @@
 
 .idea
 .gradle
+
+application-db-config.properties
