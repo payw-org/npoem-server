@@ -1,6 +1,20 @@
-plugins {
-    id 'java'
+buildscript {
+    ext {
+        springBootVersion = '2.1.7.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
 }
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
 
 group 'org.payw'
 version '1.0-SNAPSHOT'
@@ -9,8 +23,16 @@ sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
+    jcenter()
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    implementation('org.springframework.boot:spring-boot-starter-web')
+    implementation('org.springframework.boot:spring-boot-starter-data-jpa')
+
+    implementation('com.graphql-java:graphql-spring-boot-starter:3.6.0')
+    implementation('com.graphql-java:graphql-java-tools:3.2.0')
+
+    compileOnly('org.projectlombok:lombok')
+    runtimeOnly('com.h2database:h2')
 }
