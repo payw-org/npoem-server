@@ -27,7 +27,7 @@ public class Poem {
     @Column(length = 500, nullable = false)
     private String content;
 
-    @Column
+    @Column(nullable = false)
     private Integer spentTime;
 
     @Builder
