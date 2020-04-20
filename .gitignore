@@ -3,4 +3,6 @@
 .idea
 .gradle
 
+build
+
 application-db-config.properties
