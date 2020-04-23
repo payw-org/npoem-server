@@ -1,7 +1,13 @@
+type WordDictionary {
+    id: ID!,
+    word: String!
+}
+
 type Poem {
     id: ID!,
     content: String!,
     spentTime: Int!,
+    word: WordDictionary!
 }
 
 type Query {
