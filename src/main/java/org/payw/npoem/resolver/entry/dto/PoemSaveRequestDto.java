@@ -1,6 +1,6 @@
-package com.payw.npoem.resolver.entry.dto;
+package org.payw.npoem.resolver.entry.dto;
 
-import com.payw.npoem.domain.entry.Poem;
+import org.payw.npoem.domain.entry.Poem;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

@@ -1,4 +1,4 @@
-package com.payw.npoem.domain.entry;
+package org.payw.npoem.domain.entry;
 
 import lombok.Builder;
 import lombok.Getter;

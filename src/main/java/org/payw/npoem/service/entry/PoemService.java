@@ -1,8 +1,8 @@
-package com.payw.npoem.service.entry;
+package org.payw.npoem.service.entry;
 
-import com.payw.npoem.domain.entry.Poem;
-import com.payw.npoem.domain.entry.PoemRepository;
-import com.payw.npoem.resolver.entry.dto.PoemSaveRequestDto;
+import org.payw.npoem.domain.entry.Poem;
+import org.payw.npoem.domain.entry.PoemRepository;
+import org.payw.npoem.resolver.entry.dto.PoemSaveRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

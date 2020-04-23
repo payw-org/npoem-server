@@ -1,4 +1,4 @@
-package com.payw.npoem.domain.entry;
+package org.payw.npoem.domain.entry;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
