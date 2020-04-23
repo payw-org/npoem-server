@@ -12,17 +12,12 @@ import lombok.Setter;
 public class PoemSaveRequestDto {
     private String content;
     private Integer spentTime;
+    private Long word_id;
 
     @Builder
-    public PoemSaveRequestDto(String content, Integer spentTime) {
+    public PoemSaveRequestDto(String content, Integer spentTime, Long word_id) {
         this.content = content;
         this.spentTime = spentTime;
-    }
-
-    public Poem toEntity() {
-        return Poem.builder()
-                .content(content)
-                .spentTime(spentTime)
-                .build();
+        this.word_id = word_id;
     }
 }
