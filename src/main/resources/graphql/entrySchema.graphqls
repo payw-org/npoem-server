@@ -1,0 +1,18 @@
+type Poem {
+    id: ID!,
+    content: String!,
+    spentTime: Int!,
+}
+
+type Query {
+    poems: [Poem]
+}
+
+type Mutation {
+    writePoem(input: PoemSaveRequestDto!): ID!
+}
+
+input PoemSaveRequestDto{
+    content: String!
+    spentTime: Int!
+}
