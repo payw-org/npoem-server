@@ -15,11 +15,16 @@ type Query {
 }
 
 type Mutation {
-    writePoem(input: PoemSaveRequestDto!): ID!
+    writePoem(entitySaveDto: PoemSaveRequestDto!): ID!
+    registerWord(entitySaveDto: WordSaveRequestDto!): ID!
 }
 
 input PoemSaveRequestDto{
     content: String!
     spentTime: Int!
     word_id: Long!
+}
+
+input WordSaveRequestDto{
+    text: String!
 }
