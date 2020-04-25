@@ -23,8 +23,8 @@ public class Poem {
 //    private User user;
 
     @ManyToOne
-    @JoinColumn(name = "word_dictionary_id", nullable = false, updatable = false)
-    private WordDictionary word;
+    @JoinColumn(name = "word_id", nullable = false, updatable = false)
+    private Word word;
 
     @Column(length = 500, nullable = false)
     private String content;
@@ -33,7 +33,7 @@ public class Poem {
     private Integer spentTime;
 
     @Builder
-    public Poem(String content, Integer spentTime, WordDictionary word) {
+    public Poem(String content, Integer spentTime, Word word) {
         this.content = content;
         this.spentTime = spentTime;
         this.word = word;

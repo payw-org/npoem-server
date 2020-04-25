@@ -11,20 +11,20 @@ import java.util.List;
 @Getter
 @NoArgsConstructor
 @Entity
-public class WordDictionary {
+public class Word {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)
-    private String word;
+    private String text;
 
     @OneToMany(mappedBy = "word")
     private List<Poem> poems;
 
     @Builder
-    public WordDictionary(String word) {
-        this.word = word;
+    public Word(String text) {
+        this.text = text;
     }
 }
