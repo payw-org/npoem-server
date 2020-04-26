@@ -1,6 +1,5 @@
 package org.payw.npoem.resolver.entry.dto;
 
-import org.payw.npoem.domain.entry.Poem;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,17 +11,12 @@ import lombok.Setter;
 public class PoemSaveRequestDto {
     private String content;
     private Integer spentTime;
+    private Long wordId;
 
     @Builder
-    public PoemSaveRequestDto(String content, Integer spentTime) {
+    public PoemSaveRequestDto(String content, Integer spentTime, Long wordId) {
         this.content = content;
         this.spentTime = spentTime;
-    }
-
-    public Poem toEntity() {
-        return Poem.builder()
-                .content(content)
-                .spentTime(spentTime)
-                .build();
+        this.wordId = wordId;
     }
 }
