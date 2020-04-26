@@ -25,7 +25,7 @@ public class PoemService {
     }
 
     public Long writePoem(PoemSaveRequestDto requestDto) {
-        Word word = wordRepository.findById(requestDto.getWord_id())
+        Word word = wordRepository.findById(requestDto.getWordId())
                 .orElseThrow(EntityNotFoundException::new);
 
         Poem poem = Poem.builder().content(requestDto.getContent())

@@ -11,12 +11,12 @@ import lombok.Setter;
 public class PoemSaveRequestDto {
     private String content;
     private Integer spentTime;
-    private Long word_id;
+    private Long wordId;
 
     @Builder
-    public PoemSaveRequestDto(String content, Integer spentTime, Long word_id) {
+    public PoemSaveRequestDto(String content, Integer spentTime, Long wordId) {
         this.content = content;
         this.spentTime = spentTime;
-        this.word_id = word_id;
+        this.wordId = wordId;
     }
 }
