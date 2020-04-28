@@ -6,7 +6,7 @@ type Word {
 type Poem {
     id: ID!,
     content: String!,
-    spentTime: Int!,
+    spentTime: Double!,
     word: Word!
 }
 
@@ -21,7 +21,7 @@ type Mutation {
 
 input PoemSaveRequestDto{
     content: String!
-    spentTime: Int!
+    spentTime: Double!
     wordId: Long!
 }
 

@@ -30,10 +30,10 @@ public class Poem {
     private String content;
 
     @Column(nullable = false)
-    private Integer spentTime;
+    private Double spentTime;
 
     @Builder
-    public Poem(String content, Integer spentTime, Word word) {
+    public Poem(String content, Double spentTime, Word word) {
         this.content = content;
         this.spentTime = spentTime;
         this.word = word;

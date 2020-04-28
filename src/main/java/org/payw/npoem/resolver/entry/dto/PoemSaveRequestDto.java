@@ -10,11 +10,11 @@ import lombok.Setter;
 @NoArgsConstructor
 public class PoemSaveRequestDto {
     private String content;
-    private Integer spentTime;
+    private Double spentTime;
     private Long wordId;
 
     @Builder
-    public PoemSaveRequestDto(String content, Integer spentTime, Long wordId) {
+    public PoemSaveRequestDto(String content, Double spentTime, Long wordId) {
         this.content = content;
         this.spentTime = spentTime;
         this.wordId = wordId;
