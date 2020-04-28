@@ -35,6 +35,7 @@ dependencies {
 
     implementation 'com.graphql-java-kickstart:graphql-spring-boot-starter:6.0.1'
     runtimeOnly 'com.graphql-java-kickstart:graphiql-spring-boot-starter:6.0.1'
+    implementation("com.graphql-java-kickstart:graphiql-spring-boot-starter:5.10.0")
 
     compileOnly('org.projectlombok:lombok')
     runtimeOnly('com.h2database:h2')
