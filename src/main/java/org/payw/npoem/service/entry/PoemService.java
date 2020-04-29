@@ -29,7 +29,7 @@ public class PoemService {
                 .orElseThrow(EntityNotFoundException::new);
 
         Poem poem = Poem.builder().content(requestDto.getContent())
-                .spentTime(requestDto.getSpentTime())
+                .timeSpent(requestDto.getTimeSpent())
                 .word(word)
                 .build();
         return poemRepository.save(poem).getId();
