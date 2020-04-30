@@ -1,0 +1,11 @@
+type User {
+    id: ID!,
+    nickname: String!,
+}
+
+type Mutation {
+    createUser(userSaveDto: UserSaveRequestDto!): ID!
+}
+
+input UserSaveRequestDto {
+}
