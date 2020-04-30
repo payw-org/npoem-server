@@ -14,13 +14,13 @@ import org.springframework.stereotype.Service;
 @Service("userDetailsService")
 public class UserService {
 
-	private final JwtTokenProvider jwtTokenProvider;
+    private final JwtTokenProvider jwtTokenProvider;
 
     public String createUser(UserSaveRequestDto requestDto) {
-    	UUID uuid = UUID.randomUUID();
+        UUID uuid = UUID.randomUUID();
 
         User user = User.builder()
-        		.nickname(uuid.toString())
+                .nickname(uuid.toString())
                 .build();
         
         return jwtTokenProvider.createToken(user.getNickname());
