@@ -3,8 +3,8 @@ type User {
     nickname: String!,
 }
 
-type Mutation {
-    createUser(userSaveDto: UserSaveRequestDto!): ID!
+extend type Mutation {
+    createUser(userSaveDto: UserSaveRequestDto!): String!
 }
 
 input UserSaveRequestDto {
