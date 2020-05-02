@@ -1,4 +1,4 @@
-package org.payw.npoem.domain.user;
+package org.payw.npoem.service.user;
 
 import org.payw.npoem.domain.user.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -8,7 +8,6 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 @RequiredArgsConstructor
-@Service
 public class CustomUserDetailService implements UserDetailsService {
 
     private final UserRepository userRepository;
@@ -16,6 +15,6 @@ public class CustomUserDetailService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         return userRepository.findByNickname(username)
-                .orElseThrow(() -> new UsernameNotFoundException("사용자를 찾을 수 없습니다."));
+                .orElseThrow(() -> new UsernameNotFoundException("user not found"));
     }
 }
