@@ -14,6 +14,8 @@ import org.springframework.stereotype.Service;
 @Service("userDetailsService")
 public class UserService {
 
+    private final UserRepository userRepository;
+
     private final JwtTokenProvider jwtTokenProvider;
 
     public String createUser(UserSaveRequestDto requestDto) {
@@ -23,6 +25,6 @@ public class UserService {
                 .nickname(uuid.toString())
                 .build();
         
-        return jwtTokenProvider.createToken(user.getNickname());
+        return jwtTokenProvider.createToken(userRepository.save(user).getNickname());
     }
 }
