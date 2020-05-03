@@ -16,10 +16,11 @@ public class TodayWord {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
-    private String text;
+    @ManyToOne
+    @JoinColumn(name = "word_id", nullable = false, updatable = false)
+    private Word word;
 
-    public TodayWord(String text) {
-        this.text = text;
+    public TodayWord(Word word) {
+        this.word = word;
     }
 }
