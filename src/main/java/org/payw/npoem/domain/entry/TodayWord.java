@@ -18,4 +18,8 @@ public class TodayWord {
 
     @Column(nullable = false)
     private String text;
+
+    public TodayWord(String text) {
+        this.text = text;
+    }
 }
