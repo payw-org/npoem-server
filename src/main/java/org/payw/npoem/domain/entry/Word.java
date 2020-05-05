@@ -3,7 +3,7 @@ package org.payw.npoem.domain.entry;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.payw.npoem.domain.entry.Poem;
+import org.payw.npoem.domain.BaseTimeEntity;
 
 import javax.persistence.*;
 import java.util.List;
@@ -11,7 +11,7 @@ import java.util.List;
 @Getter
 @NoArgsConstructor
 @Entity
-public class Word {
+public class Word extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
