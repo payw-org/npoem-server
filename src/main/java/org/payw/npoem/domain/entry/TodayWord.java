@@ -4,28 +4,25 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.payw.npoem.domain.BaseTimeEntity;
-import org.payw.npoem.domain.entry.Poem;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Getter
 @NoArgsConstructor
 @Entity
-public class Word extends BaseTimeEntity {
+public class TodayWord  extends BaseTimeEntity {
+    // todo : add created using Jpa Auditing
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, unique = true)
-    private String text;
-
-    @OneToMany(mappedBy = "word")
-    private List<Poem> poems;
+    @ManyToOne
+    @JoinColumn(name = "word_id", nullable = false, updatable = false)
+    private Word word;
 
     @Builder
-    public Word(String text) {
-        this.text = text;
+    public TodayWord(Word word) {
+        this.word = word;
     }
 }
