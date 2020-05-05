@@ -3,13 +3,14 @@ package org.payw.npoem.domain.entry;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.payw.npoem.domain.BaseTimeEntity;
 
 import javax.persistence.*;
 
 @Getter
 @NoArgsConstructor
 @Entity
-public class TodayWord {
+public class TodayWord  extends BaseTimeEntity {
     // todo : add created using Jpa Auditing
 
     @Id
