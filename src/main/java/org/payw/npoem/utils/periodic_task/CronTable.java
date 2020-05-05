@@ -18,7 +18,7 @@ public class CronTable {
     @Scheduled(cron = "01 00 00 * * *")
     public void updateTodayWord() {
         Word word = wordRepository.findRandomWord();
-        TodayWord todayWord = new TodayWord(word);
+        TodayWord todayWord = TodayWord.builder().word(word).build();
         todayWordRepository.save(todayWord);
     }
 }

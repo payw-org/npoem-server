@@ -1,5 +1,6 @@
 package org.payw.npoem.domain.entry;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -19,6 +20,7 @@ public class TodayWord {
     @JoinColumn(name = "word_id", nullable = false, updatable = false)
     private Word word;
 
+    @Builder
     public TodayWord(Word word) {
         this.word = word;
     }
