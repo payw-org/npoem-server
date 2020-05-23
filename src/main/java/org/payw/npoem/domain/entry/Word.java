@@ -21,9 +21,6 @@ public class Word extends BaseTimeEntity {
     @Column(nullable = false, unique = true)
     private String text;
 
-    @OneToMany(mappedBy = "word")
-    private List<Poem> poems;
-
     @Builder
     public Word(String text) {
         this.text = text;
