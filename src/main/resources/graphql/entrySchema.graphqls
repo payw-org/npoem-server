@@ -10,8 +10,14 @@ type Poem {
     word: Word!
 }
 
+type TodayWord {
+    id: ID!,
+    word: Word!
+}
+
 type Query {
     poems: [Poem]
+    todayWord: TodayWord
 }
 
 type Mutation {
