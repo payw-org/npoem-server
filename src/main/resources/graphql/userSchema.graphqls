@@ -3,6 +3,11 @@ type User {
     nickname: String!,
 }
 
+extend type Query {
+    users: [User]
+    user(nickname: String!): User
+}
+
 extend type Mutation {
     createUser(userSaveDto: UserSaveRequestDto!): String!
 }

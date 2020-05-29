@@ -1,5 +1,7 @@
 package org.payw.npoem.service.user;
 
+import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 import org.payw.npoem.domain.user.User;
@@ -19,12 +21,6 @@ public class UserService implements UserDetailsService {
 
     private final UserRepository userRepository;
 
-    @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return userRepository.findByNickname(username)
-                .orElseThrow(() -> new UsernameNotFoundException("user not found"));
-    }
-
     public User createUser(UserSaveRequestDto requestDto) {
         UUID uuid = UUID.randomUUID();
 
@@ -36,4 +32,19 @@ public class UserService implements UserDetailsService {
         
         return user;
     }
+
+    public List<User> findAllUsers() {
+        return userRepository.findAll();
+    }
+
+    // TODO return userRepository.findByUsername result
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        return userRepository.findByNickname(username)
+                .orElseThrow(() -> new UsernameNotFoundException("user not found"));
+    }
+
+    public Optional<User> loadUserByNickname(String nickname) {
+        return userRepository.findByNickname(nickname);
+    };
 }
