@@ -28,7 +28,7 @@ public class JwtTokenProvider {
     @Value("${jwt.secretKey")
     private String secretKey;
 
-//    private long tokenValidTime = 30 * 60 * 1000L;
+    private double tokenValidTime = Double.POSITIVE_INFINITY;
     
     private final UserService userService;
 
@@ -43,7 +43,7 @@ public class JwtTokenProvider {
         return Jwts.builder()
                 .setClaims(claims)
                 .setIssuedAt(now)
-//                .setExpiration(new Date(now.getTime() + tokenValidTime))
+                .setExpiration(new Date((long) (now.getTime() + tokenValidTime)))
                 .signWith(SignatureAlgorithm.HS256, secretKey)
                 .compact();
     }
