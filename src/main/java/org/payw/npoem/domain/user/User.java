@@ -10,6 +10,7 @@ import java.util.Collection;
 import javax.persistence.*;
 
 import org.payw.npoem.domain.BaseTimeEntity;
+
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 

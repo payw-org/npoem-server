@@ -3,6 +3,7 @@ package org.payw.npoem.domain.entry;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+
 import org.payw.npoem.domain.BaseTimeEntity;
 
 import javax.persistence.*;
