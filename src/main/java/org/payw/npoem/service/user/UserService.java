@@ -2,7 +2,6 @@ package org.payw.npoem.service.user;
 
 import java.util.UUID;
 
-import org.payw.npoem.config.security.JwtTokenProvider;
 import org.payw.npoem.domain.user.User;
 import org.payw.npoem.domain.user.UserRepository;
 import org.payw.npoem.resolver.user.dto.UserSaveRequestDto;
