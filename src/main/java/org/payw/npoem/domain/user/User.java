@@ -19,13 +19,14 @@ import org.springframework.security.core.userdetails.UserDetails;
 @AllArgsConstructor
 @Builder
 @Entity
+@Table(uniqueConstraints = {@UniqueConstraint(name = "nickname", columnNames = "nickname")})
 public class User extends BaseTimeEntity implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(length = 100, nullable = false, unique = true)
+    @Column(length = 100, nullable = false)
     private String nickname;
 
 	@Override
