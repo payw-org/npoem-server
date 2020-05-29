@@ -10,6 +10,7 @@ extend type Query {
 
 extend type Mutation {
     createUser(userSaveDto: UserSaveRequestDto!): String!
+    updateNickname(token: String!, nickname: String!): String!
 }
 
 input UserSaveRequestDto {

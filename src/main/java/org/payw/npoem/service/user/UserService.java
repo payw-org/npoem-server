@@ -47,4 +47,10 @@ public class UserService implements UserDetailsService {
     public Optional<User> loadUserByNickname(String nickname) {
         return userRepository.findByNickname(nickname);
     };
+
+    public String updateNickname(User user, String nickname) {
+        user.setNickname(nickname);
+        userRepository.save(user);
+        return user.getNickname();
+    }
 }
