@@ -12,7 +12,6 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Entity
 public class TodayWord  extends BaseTimeEntity {
-    // todo : add created using Jpa Auditing
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
