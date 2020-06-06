@@ -1,10 +1,12 @@
 package org.payw.npoem.utils.periodic_task;
 
 import lombok.RequiredArgsConstructor;
+
 import org.payw.npoem.domain.entry.TodayWord;
 import org.payw.npoem.domain.entry.TodayWordRepository;
 import org.payw.npoem.domain.entry.Word;
 import org.payw.npoem.domain.entry.WordRepository;
+
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
