@@ -24,4 +24,6 @@ public class UserQuery implements GraphQLQueryResolver {
     public Optional<User> user(String nickname) {
         return userService.loadUserByNickname(nickname);
     }
+
+    public Boolean isPlayedToday() {return userService.isPlayedToday();}
 }
