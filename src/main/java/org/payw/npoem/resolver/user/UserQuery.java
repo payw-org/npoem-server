@@ -25,5 +25,5 @@ public class UserQuery implements GraphQLQueryResolver {
         return userService.loadUserByNickname(nickname);
     }
 
-    public Boolean isPlayedToday() {return userService.isPlayedToday();}
+    public Boolean isPlayedToday() { return userService.isPlayedToday(); }
 }
