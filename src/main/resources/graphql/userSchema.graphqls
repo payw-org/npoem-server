@@ -15,4 +15,5 @@ extend type Mutation {
 }
 
 input UserSaveRequestDto {
+    nickname: String!
 }

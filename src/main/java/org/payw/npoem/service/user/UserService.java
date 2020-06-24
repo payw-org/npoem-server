@@ -3,7 +3,6 @@ package org.payw.npoem.service.user;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 
 import org.payw.npoem.domain.entry.Poem;
 import org.payw.npoem.domain.entry.PoemRepository;
@@ -27,10 +26,8 @@ public class UserService implements UserDetailsService {
     private final PoemRepository poemRepository;
 
     public User createUser(UserSaveRequestDto requestDto) {
-        UUID uuid = UUID.randomUUID();
-
         User user = User.builder()
-                .nickname(uuid.toString())
+                .nickname(requestDto.getNickname())
                 .build();
 
         userRepository.save(user);
