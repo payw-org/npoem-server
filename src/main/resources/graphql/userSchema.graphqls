@@ -3,9 +3,17 @@ type User {
     nickname: String!,
 }
 
+extend type Query {
+    users: [User]
+    user(nickname: String!): User
+    isPlayedToday: Boolean
+}
+
 extend type Mutation {
     createUser(userSaveDto: UserSaveRequestDto!): String!
+    updateNickname(token: String!, nickname: String!): String!
 }
 
 input UserSaveRequestDto {
+    nickname: String!
 }
