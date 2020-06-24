@@ -63,7 +63,7 @@ public class UserService implements UserDetailsService {
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         LocalDateTime now = LocalDateTime.now();
 
-        Poem poem =  poemRepository.findByUser_idAndCreatedBetween(
+        Poem poem =  poemRepository.findByUserIdAndCreatedBetween(
                 user.getId(),
                 LocalDateTime.of(now.getYear(), now.getMonth(), now.getDayOfMonth(), 0, 0) ,
                 now
